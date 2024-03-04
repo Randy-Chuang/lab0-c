@@ -109,7 +109,7 @@ element_t *q_remove_tail(struct list_head *head, char *sp, size_t bufsize)
     if (!head || list_empty(head))
         return NULL;
 
-    struct list_head *prev = head->prev;
+    struct list_head *prev = head->prev->prev;
     return q_remove_head(prev, sp, bufsize);
 }
 
